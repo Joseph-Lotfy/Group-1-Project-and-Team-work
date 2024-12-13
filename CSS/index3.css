@@ -1,0 +1,365 @@
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('../fonts/MonumentExtended-Regular.otf') format('opentype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('../fonts/MonumentExtended-Regular.otf') format('opentype');
+    font-weight: lighter;
+}
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('../fonts/MonumentExtended-Ultrabold.otf') format('opentype');
+    font-weight: bold;
+}
+a{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+html{
+    width: 100vw;
+    -webkit-font-smoothing: antialiased;
+}
+body{
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    background-color: black !important;
+    overflow-x: hidden;
+    font-family: "MonumentExtended", "Helvetica", Arial, sans-serif !important;
+    -webkit-text-stroke-width: 0px;
+    letter-spacing: 1.5px;
+}
+
+.right-bar{
+    position: fixed !important;
+    width: fit-content !important;
+    z-index: 100 !important;
+    right: 40px;
+    color: white !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.right-bar i{
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.vertical-icons{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-top: 50px;
+}
+.vertical-icon{
+    width: 21.5px;
+    display: flex !important; 
+    justify-content: center;
+}
+.logo{
+    display: none;
+}
+.navbar .navbar-toggler-icon{
+    color: white !important;
+    border: none;
+}
+.navbar .fa-solid {
+    margin-bottom: 0 !important;
+}
+.navbar-toggler{
+    border: none !important;
+}
+.navbar-toggler:focus{
+    box-shadow: none !important;
+}
+.offcanvas{
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+.offcanvas-header{
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+.offcanvas-title{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+.close-button{
+    border: none;
+    background-color: transparent;
+    color: white !important;
+}
+.offcanvas-body{
+    display: flex;
+    flex-direction: column;
+}
+.nav-item{
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.icons{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.icons i{
+    font-size: 18px;
+}
+.sign{
+    margin-top: 30px;
+    font-size: 13px;
+}
+.sign-in{
+    border: 1px white solid;
+    padding: 5px 20px;
+    width: fit-content;
+}
+@media screen and (width < 1100px) {
+    .right-bar{
+        width: 100vw !important;
+        background-color: black;
+        right: 0;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .vertical-icons{
+        flex-direction: row;
+        margin-top: 0;
+    }
+    .vertical-icon{
+        margin-bottom: 0 !important;
+        margin-right: 10px;
+    }
+    .logo{
+        display: block;
+    }
+    .logo img{
+        width: 50px;
+    }
+}
+@media screen and (width < 450px) {
+    .vertical-icons{
+        display: none;
+    }
+}
+.bg-image{
+    background: url(../img/Keepitsimple.webp), linear-gradient(transparent, black 100%);
+    background-blend-mode: overlay;
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    filter: blur(4px);
+}
+.space{
+    height: 8.5rem;
+}
+.filterBlur{
+    height: 100vh;
+
+    /* backdrop-filter:blur(4px); */
+}
+.row{
+    max-width: 100vw;
+
+}
+.space-small{
+    margin-bottom: 70px;
+}
+.cover-song-name{
+    height: fit-content;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #F1F1F1;
+    -webkit-text-fill-color: transparent;
+    font-family: "MonumentExtended", "Helvetica", Arial, sans-serif;
+    font-size: 3rem;
+    
+}
+.conro{
+    font-size: 2.2rem;
+    line-height: 1;
+    font-family: "MonumentExtended", "Helvetica", Arial, sans-serif;
+    font-weight: 500;
+    margin-bottom: 68px;
+}
+.listen-button{
+    background-color: #50A584 !important;
+    color: white !important;
+    padding: 12px 20px;
+    font-size: 0.9rem !important;
+    border-radius: 0 !important;
+    font-family: "MonumentExtended", "Helvetica", Arial, sans-serif !important;
+    font-weight: 100 !important;
+    letter-spacing: 2px;
+    border: #50A584;
+    transition: background 0.3s;
+    margin-right: 5px;
+}
+.share-button{
+    background-color: transparent;
+    color: white !important;
+    border: 1px solid white;
+    font-family: "MonumentExtended", "Helvetica", Arial, sans-serif !important;
+    padding: 13px 20px;
+    font-size: .9rem !important;
+    font-weight: normal;
+    transition: background 0.3s;
+}
+.listen-button:hover, .share-button:hover{
+    background-color: white !important;
+    color: black !important;
+}
+.listen-button:hover  path{
+    stroke: black !important;
+}
+.share-button:hover  path{
+    stroke: black !important;
+}
+@media screen and (width < 600px){
+    .space-small{
+        margin-bottom: 0 !important;
+    }
+    .cover-song-name{
+        font-size: 24px !important;
+        -webkit-text-fill-color: white !important;
+        -webkit-text-stroke-width: 0px;
+        letter-spacing: 1px;
+    }
+}
+.song-list{
+    color: white !important;
+    margin-top: 80px;
+    padding-inline: 50px;
+    padding-bottom: 40px;
+}
+.song-list-title{
+    margin-bottom: 70px;
+}
+.song{
+    display: flex;
+    justify-content: space-between;
+    font-weight: lighter;
+    margin-bottom: 40px;
+}
+.song-left{
+    display: flex;
+    gap: 30px;
+}
+.song-number{
+
+    display: flex;
+    align-items: center;
+}
+.song-img{
+    width: 40px;
+
+}
+@media screen and (width < 1000px){
+    .song-img{
+        display: none;
+    }
+}
+.play-icon{
+    font-size: 30px;
+    cursor: pointer;
+}
+.song-name{
+    font-size: 0.9rem;
+}
+.song-artist{
+    font-size: 0.7rem;
+}
+.song-right{
+    display: flex;
+    margin-right: 100px;
+    gap: 50px;
+}
+@media screen and (width < 600px){
+    .song-right i{
+        display: none;
+    }
+    .song-list{
+        padding: 10px;
+    }
+    .song-right{
+        margin-right: 0px;
+    }
+}
+@media screen and (width < 1000px){
+    .song-list{
+        padding: 10px;
+    }
+    .song-right{
+        margin-right: 10px;
+    }
+}
+path {
+    stroke: #ffffff;
+  }
+  .footer{
+    background:#000;
+    padding:30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align:center;
+    }
+    
+    .footer .row{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:gray;
+    font-size:0.8em;
+    display: flex;
+    justify-content: center;
+    }
+    
+    .footer .row a{
+    text-decoration:none;
+    color:gray;
+    transition:0.5s;
+    width: fit-content;
+    }
+    
+    .footer .row a:hover{
+    color:#fff;
+    }
+    
+    .footer .row ul{
+    width:100%;
+    }
+    
+    .footer .row ul li{
+    display:inline-block;
+    margin:0px 30px;
+    }
+    
+    .footer .row a i{
+    font-size:2em;
+    margin:0% 1%;
+    }
+    
+    @media (max-width:720px){
+    .footer{
+    text-align:left;
+    padding:5%;
+    }
+    .footer .row ul li{
+    display:block;
+    margin:10px 0px;
+    text-align:left;
+    }
+    .footer .row a i{
+    margin:0% 3%;
+    }
+    }

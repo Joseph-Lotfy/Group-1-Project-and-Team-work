@@ -15,40 +15,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Days+One&family=Figtree:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-	<style type="text/css">
-	
-		#text{
-	
-			height: 25px;
-			border-radius: 5px;
-			padding: 4px;
-			border: solid thin #aaa;
-			width: 100%;
-		}
-	
-		#button{
-	
-			padding: 10px;
-			width: 100px;
-			color: white;
-			background-color: lightblue;
-			border: none;
-		}
-	
-		#box{
-	
-			background-color: grey;
-			margin: auto;
-			width: 300px;
-			padding: 20px;
-		}
-	
-		</style>
 
 
 </head>
 <body>
-	<div class="bg-image" id="bg-image"></div>
     <div class="right-bar">
         <nav class="navbar fixed-right">
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
