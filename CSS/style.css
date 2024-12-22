@@ -13,7 +13,8 @@ a{color:inherit;text-decoration:none}
 	width:100%;
 	margin:auto;
 	max-width:525px;
-	min-height:670px;
+	min-height:690px;
+	height: fit-content;
 	position:relative;
 	background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
@@ -162,10 +163,7 @@ a{color:inherit;text-decoration:none}
 .login-form .group .button:hover {
     background: rgb(109, 4, 4); 
 }
-.login-form .group .input:hover {
-    background: #cbcbe9; 
-    color: #060606; 
-}
+
 .form-text {
     margin-top: 20px;
     text-align: center;

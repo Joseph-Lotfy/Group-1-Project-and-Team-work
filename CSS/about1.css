@@ -42,6 +42,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+
+
 }
 .right-bar i{
     margin-bottom: 20px;
@@ -146,7 +148,7 @@ body{
     }
 }
 .bg-image{
-    background: url(../img/Keepitsimple.webp), linear-gradient(transparent, black 100%);
+    background: url(../img/instantCrush.jpg), linear-gradient(transparent, black 50%);
     background-blend-mode: overlay;
     height: 100vh;
     width: 100vw;
@@ -270,8 +272,8 @@ body{
         display: none;
     }
 }
-.play-icon{
-    font-size: 30px;
+.play-icon svg{
+    width: 30px !important;
     cursor: pointer;
 }
 .song-name{
@@ -306,6 +308,223 @@ body{
 }
 path {
     stroke: #ffffff;
+  }
+  .card_cont{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+}
+.card{
+    width: 240px;
+    height: 373px;
+    background-color: #ffffff;
+}
+.card img{
+    width: 100%;
+    border-radius: 5px;
+}
+.card h4{
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 20px;
+    color: black;
+}
+.card p{
+    text-align: center;
+    font-size: .8rem !important;
+    color: black;
+}
+.card .icon{
+    position: absolute;
+    left: 30%;
+    top: -18px;
+}
+.card .text{
+    position: relative;
+}
+.card .icon i{
+    color: black;
+    /* border: rgb(0, 0, 0) 1px solid; */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition-property: background-color color;
+    transition-duration: .5s;
+    box-shadow: 0px 0px 4px rgb(195, 190, 190);
+    background-color: white;
+}
+
+.card .icon i:hover{
+    background-color: var(--primary);
+    color: white;
+    opacity: 1;
+}
+.heading1{
+    color: white;
+    padding-top: 100px;
+    font-size: 3.5rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #F1F1F1;
+    -webkit-text-fill-color: transparent;
+}
+.heading2{
+    color: white;
+    font-size: 3.5rem;
+
+}
+.about-paragraph{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: 100;
+    color: #ded6d6;
+    width: 70%;
+    padding-block: 50px;
+}
+.heading3{
+    color: white;
+    padding-top: 10px;
+    font-size: 3.5rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #F1F1F1;
+    -webkit-text-fill-color: transparent;
+}
+.heading4{
+    color: white;
+    font-size: 3.5rem;
+    padding-bottom: 3rem;
+}
+
+.team-img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  ul i {
+    color: #fff;
+    font-size: clamp(0.9rem, 0.825rem + 0.3vw, 1.2rem);
+  }
+  
+  ul i:hover {
+    color: #0a66c2;
+  }
+  
+  .team-sec {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-align: center;
+    width: calc(min(90rem, 90%));
+    margin-inline: auto;
+  }
+  
+  .team-cards {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 1.5rem;
+    gap: 20px;
+  }
+  
+  .team-card {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .team-card h3,
+  .team-card p {
+    text-transform: capitalize;
+  }
+  
+  .team-card h3 {
+    font-size: clamp(1rem, 0.9167rem + 0.2667vw, 1.25rem);
+    font-weight: bold;
+    color: #f6f6f6;
+  }
+  
+  .team-card p {
+    font-size: clamp(0.85rem, 0.75rem + 0.32vw, 1.15rem);
+    letter-spacing: 0.12rem;
+    font-weight: 300;
+    max-width: 100%;
+  }
+  
+  .team-card::before {
+    position: absolute;
+    content: "";
+    width: 5rem;
+    height: 6.25rem;
+    z-index: 0;
+    transition: 0.3s ease-in-out;
+    background: #000 !important;
+    background: linear-gradient(to left, #ff9472, #f2709c);
+    top: -0.375rem;
+    left: -0.375rem;
+  }
+  
+  .team-card::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      hsl(210deg 2.99% 26.27% / 20%),
+      hsl(0deg 0% 3.14% / 90%)
+    );
+  }
+  
+  .team-card img {
+    filter: grayscale(0%);
+    transition: 0.5s ease;
+  }
+  
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    z-index: 99;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    padding: 1.875rem 1.25rem;
+    text-align: center;
+  }
+  
+  .card-content ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    margin-top: 1.25rem;
+  }
+  
+  .team-card:hover img {
+    filter: grayscale(0%);
+  }
+  
+  .team-card:hover::before {
+    transform: scale(1.03);
+  }
+  
+  .team-card {
+    height: 411px;
+    width: 300px;
+  }
+  
+  .team-card img {
+    height: 100%;
   }
   .footer{
     background:#000;
@@ -362,4 +581,124 @@ path {
     .footer .row a i{
     margin:0% 3%;
     }
+    }
+    .right-nav{
+        position: absolute;
+        width: 400px;
+        height: 100vh;
+        right: -50px;
+        background-color: #000;
+        z-index: 500000;
+        transition: all 0.5s;
+        top: -20px;
+        transform: translate(400px,0);
+    }
+    .nav-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-inline: 36px;
+        margin-top: 36px;
+    }
+    
+    .nav-header h1{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .nav-items{
+        margin-inline: 36px;
+        margin-top: 36px;
+        
+    }
+    .fa-angle-right{
+        padding: 0;
+        margin: 0 !important;
+    }
+    .right-bar{
+        position: fixed !important;
+        width: fit-content !important;
+        z-index: 100 !important;
+        right: 40px;
+        color: white !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 20px;
+    }
+    .right-bar i{
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    .vertical-icons{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        margin-top: 50px;
+    }
+    .vertical-icon{
+        width: 21.5px;
+        display: flex !important; 
+        justify-content: center;
+    }
+    .logo{
+        display: none;
+    }
+    
+    .close-button{
+        border: none;
+        background-color: transparent;
+        color: white !important;
+    }
+    .nav-item{
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+    .icons{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .icons i{
+        font-size: 18px;
+    }
+    .sign{
+        margin-top: 30px;
+        font-size: 13px;
+    }
+    .sign-in{
+        border: 1px white solid;
+        padding: 5px 20px;
+        width: fit-content;
+    }
+    @media screen and (width < 1100px) {
+        .right-bar{
+            width: 100vw !important;
+            background-color: black;
+            right: 0;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            top: 0;
+        }
+        .right-nav{
+            top: 0;
+        }
+        .vertical-icons{
+            flex-direction: row;
+            margin-top: 0;
+        }
+        .vertical-icon{
+            margin-bottom: 0 !important;
+            margin-right: 10px;
+        }
+        .logo{
+            display: block;
+        }
+        .logo img{
+            width: 50px;
+        }
+    }
+    @media screen and (width < 450px) {
+        .vertical-icons{
+            display: none;
+        }
     }

@@ -1,67 +1,48 @@
-<?php 
-
-session_start();
-
-	include("connection.php");
-	include("functions.php");
-
-
-	if($_SERVER['REQUEST_METHOD'] == "POST")
-	{
-		//something was posted
-		$user_name = $_POST['user_name'];
-		$password = $_POST['password'];
-
-		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
-		{
-
-			//read from database
-			$query = "select * from users where user_name = '$user_name' limit 1";
-			$result = mysqli_query($con, $query);
-
-			if($result)
-			{
-				if($result && mysqli_num_rows($result) > 0)
-				{
-
-					$user_data = mysqli_fetch_assoc($result);
-					
-					if($user_data['password'] === $password)
-					{
-
-						$_SESSION['user_id'] = $user_data['user_id'];
-						header("Location: index.php");
-						die;
-					}
-				}
-			}
-			
-			echo "wrong username or password!";
-		}else
-		{
-			echo "wrong username or password!";
-		}
-	}
-
+<?php
+    session_start();
+    $_SESSION;
+    include ("connection.php");
+    include ("functions.php");
+    $user_data = check_login($con);
 ?>
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Signin</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-	<link rel="stylesheet" href="CSS/signin1.css">
-    <link rel="stylesheet" href="CSS/style.css">
+	<link rel="stylesheet" href="CSS/about1.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Days+One&family=Figtree:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<style type="text/css">
 	
-		
+		#text{
+	
+			height: 25px;
+			border-radius: 5px;
+			padding: 4px;
+			border: solid thin #aaa;
+			width: 100%;
+		}
+	
+		#button{
+	
+			padding: 10px;
+			width: 100px;
+			color: white;
+			background-color: lightblue;
+			border: none;
+		}
+	
+		#box{
+	
+			background-color: grey;
+			margin: auto;
+			width: 300px;
+			padding: 20px;
+		}
+		</style>
 
 
 </head>
@@ -192,56 +173,126 @@ session_start();
             <img src="img/j.png">
         </div>
     </div>
-    <div class="container  filterBlur">
-		<!-- <div id="box">
-		
-			<form method="post">
-				<div style="font-size: 20px;margin: 10px;color: white;">Sign in</div>
-		
-				<input id="text" type="text" name="user_name"><br><br>
-				<input id="text" type="password" name="password"><br><br>
-		
-				<input id="button" type="submit" value="Signup"><br><br>
-		
-				<a href="signup.php">doesn't have an account? Click here to make a new account</a><br><br>
-			</form>
-		</div> -->
-        <div class="login-wrap"> 
-            <div class="login-html">
-              <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-              <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
-              
-              <div class="login-form">
-                
-                <form method="post" class="sign-in-htm">
-                  <div class="group">
-                    <label for="user" class="label">Username</label>
-                    <input id="user" type="text" class="input" name="user_name">
-                  </div>
-                  <div class="group">
-                    <label for="pass" class="label">Password</label>
-                    <input id="pass" type="password" class="input" data-type="password" name="password">
-                  </div>
-                  <div class="group">
-                    <input id="check" type="checkbox" class="check" checked>
-                    <label for="check"><span class="icon"></span> Keep me Signed in</label>
-                  </div>
-                  <div class="group">
-                    <input type="submit" class="button" value="Sign In">
-                  </div>
-                  <div class="hr"></div>
-                  <div class="foot-lnk">
-                    <a href="#forgot">Don't have an account</a>
-                  </div>
-                  
-                  <div class="form-text">
-                    <p>Feel the rhythm, embrace the melody!<br> your favorite music is just a click away</p>
-                  </div>
-                </form>
-              </div>
+    <div class="container  filterBlur" style="margin-top: 10px;">
+        <h1 class="heading1">ABOUT</h1>
+        <h1 class="heading2">EcoHarmony</h1>
+        <div class="about-paragraph">
+            <p>
+                Discover a music experience like no other with our dynamic platform. Designed to bring you closer to your favorite songs and artists, our music player offers a clean and intuitive interface for exploring playlists, browsing artist profiles, and staying in tune with the latest trends.
+            </p>
+            <p>
+                As a team of passionate developers from the Faculty of Engineering, we’ve combined our technical expertise and love for music to create a seamless journey for music lovers. Every feature is designed to be user-focused and work beautifully across devices. Dive into an experience where innovation meets simplicity, all crafted with care and attention to detail.
+            </p>
+        </div>
+        <h1 class="heading3">OUR</h1>
+        <h1 class="heading4">DEVELOPERS</h1>
+        <!-- <div class="card_cont">
+            <div class="card">
+                <img src="img/Josef.jpeg" height="280px">
+                <div class="text">
+                    <h4>Joseph Lotfy</h4>
+                    <p>Proffesion</p>
+                    <div class="icon">
+                        <a href="https://www.facebook.com/jossef.lotfy.7"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/home?lang=en"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/joseph-lotfy-fayez?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "><i class="fa-brands fa-linkedin "></i></a>
+                    </div>
+                </div>
             </div>
-        </div> 
-        <footer>
+            <div class="card">
+                <img src="img/Abanoub Samy1.jpg" height="280px">
+                <div class="text">
+                    <h4>Abanoub Samy</h4>
+                    <p>Proffesion</p>
+                    <div class="icon">
+                        <a href="https://www.facebook.com/abanob.samy.5220665"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/home?lang=en"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/abanoub-samy-539399273?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "><i class="fa-brands fa-linkedin "></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/Abanoub Adel.jpg" height="280px">
+                <div class="text">
+                    <h4>Abanoub Adel</h4>
+                    <p>Proffesion</p>
+                    <div class="icon">
+                        <a href="https://www.facebook.com/bebo.adel.7902?mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/home?lang=en"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/abanoub-adel-a816a528b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "><i class="fa-brands fa-linkedin "></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/Peter.jpg" height="280px">
+                <div class="text">
+                    <h4>Peter Naeem</h4>
+                    <p>Proffesion</p>
+                    <div class="icon">
+                        <a href="https://www.facebook.com/profile.php?id=100084871332771&mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/home?lang=en"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/peter-naeem-2a2a3a2aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "><i class="fa-brands fa-linkedin "></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/Hassan.jpg" height="280px">
+                <div class="text">
+                    <h4>Hassam Sayed</h4>
+                    <p>Proffesion</p>
+                    <div class="icon">
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/home?lang=en"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="fa-brands fa-linkedin "></i></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <section class="team-sec">
+
+            <div class="team-cards">
+              <!-- First Row -->
+              <div class="team-card">
+                <img class="team-img" src="img/Abanoub Adel.jpg" alt="Franklin Carlson" />
+                <div class="card-content">
+                  <h3>Abanob Adel</h3>
+                  <p>The Fastest</p>
+                </div>
+              </div>
+              <div class="team-card">
+                <img class="team-img" src="img/Abanoub Samy1.jpg" alt="Antonia Moore" />
+                <div class="card-content">
+                  <h3>Abanoub Samy</h3>
+                  <p>The Whisperer</p>
+                </div>
+              </div>
+              <div class="team-card">
+                <img class="team-img" src="img/Hassan.jpg" alt="Travis Lynch" />
+                <div class="card-content">
+                  <h3>Hassan Sayed</h3>
+                  <p>The Game Changer</p>
+                </div>
+              </div>
+      
+              <!-- Second Row -->
+              <div class="team-card">
+                <img class="team-img" src="img/Josef.jpg" alt="New Person 1" />
+                <div class="card-content">
+                  <h3>Joseph Lotfy</h3>
+                  <p>The artist</p>
+                </div>
+              </div>
+              <div class="team-card">
+                <img class="team-img" src="img/Peter.jpg" alt="New Person 2" />
+                <div class="card-content">
+                  <h3>Peter Naeem</h3>
+                  <p>The Fearless One</p>
+                </div>
+              </div>
+
+            </div>
+          </section>
+          <footer>
             <div class="footer">
             <div class="row">
             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -266,6 +317,7 @@ session_start();
             </div>
         </footer>
     </div>
+
     <script src="SCRIPT/nav.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/620f487299.js" crossorigin="anonymous"></script>

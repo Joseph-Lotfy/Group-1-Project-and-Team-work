@@ -32,7 +32,42 @@ body{
     -webkit-text-stroke-width: 0px;
     letter-spacing: 1.5px;
 }
+.nav{
+    width: 100%;
+    background-color: #000;
+    height: 50px;
+}
+.right-nav{
+    position: absolute;
+    width: 400px;
+    height: 100vh;
+    right: -50px;
+    background-color: #000;
+    z-index: 500000;
+    transition: all 0.5s;
+    top: -20px;
+    transform: translate(400px,0);
+}
+.nav-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 36px;
+    margin-top: 36px;
+}
 
+.nav-header h1{
+    font-size: 20px;
+
+}
+.nav-items{
+    margin-inline: 36px;
+    margin-top: 36px;
+}
+.fa-angle-right{
+    padding: 0;
+    margin: 0 !important;
+}
 .right-bar{
     position: fixed !important;
     width: fit-content !important;
@@ -42,6 +77,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    top: 50px;
 }
 .right-bar i{
     margin-bottom: 20px;
@@ -61,43 +97,14 @@ body{
 .logo{
     display: none;
 }
-.navbar .navbar-toggler-icon{
-    color: white !important;
-    border: none;
-}
-.navbar .fa-solid {
-    margin-bottom: 0 !important;
-}
-.navbar-toggler{
-    border: none !important;
-}
-.navbar-toggler:focus{
-    box-shadow: none !important;
-}
-.offcanvas{
-    background-color: black;
-    color: white;
-    padding: 20px;
-}
-.offcanvas-header{
-    justify-content: space-between;
-    padding-bottom: 0;
-}
-.offcanvas-title{
-    font-size: 1.3rem;
-    text-transform: uppercase;
-}
+
 .close-button{
     border: none;
     background-color: transparent;
     color: white !important;
 }
-.offcanvas-body{
-    display: flex;
-    flex-direction: column;
-}
 .nav-item{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-transform: uppercase;
 }
 .icons{
@@ -124,6 +131,10 @@ body{
         right: 0;
         flex-direction: row-reverse;
         justify-content: space-between;
+        top: 0;
+    }
+    .right-nav{
+        top: 0;
     }
     .vertical-icons{
         flex-direction: row;
@@ -146,7 +157,7 @@ body{
     }
 }
 .bg-image{
-    background: url(../img/Keepitsimple.webp), linear-gradient(transparent, black 50%);
+    background: url(../img/Keepitsimple.webp), linear-gradient(transparent, black 100%);
     background-blend-mode: overlay;
     height: 100vh;
     width: 100vw;
@@ -270,8 +281,8 @@ body{
         display: none;
     }
 }
-.play-icon svg{
-    width: 30px !important;
+.play-icon{
+    font-size: 30px;
     cursor: pointer;
 }
 .song-name{
@@ -307,3 +318,59 @@ body{
 path {
     stroke: #ffffff;
   }
+  .footer{
+    background:#000;
+    padding:30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align:center;
+    }
+    
+    .footer .row{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:gray;
+    font-size:0.8em;
+    display: flex;
+    justify-content: center;
+    }
+    
+    .footer .row a{
+    text-decoration:none;
+    color:gray;
+    transition:0.5s;
+    width: fit-content;
+    }
+    
+    .footer .row a:hover{
+    color:#fff;
+    }
+    
+    .footer .row ul{
+    width:100%;
+    }
+    
+    .footer .row ul li{
+    display:inline-block;
+    margin:0px 30px;
+    }
+    
+    .footer .row a i{
+    font-size:2em;
+    margin:0% 1%;
+    }
+    
+    @media (max-width:720px){
+    .footer{
+    text-align:left;
+    padding:5%;
+    }
+    .footer .row ul li{
+    display:block;
+    margin:10px 0px;
+    text-align:left;
+    }
+    .footer .row a i{
+    margin:0% 3%;
+    }
+    }

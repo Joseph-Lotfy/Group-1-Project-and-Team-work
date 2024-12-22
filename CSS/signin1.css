@@ -32,42 +32,7 @@ body{
     -webkit-text-stroke-width: 0px;
     letter-spacing: 1.5px;
 }
-.nav{
-    width: 100%;
-    background-color: #000;
-    height: 50px;
-}
-.right-nav{
-    position: absolute;
-    width: 400px;
-    height: 100vh;
-    right: -50px;
-    background-color: #000;
-    z-index: 500000;
-    transition: all 0.5s;
-    top: -20px;
-    transform: translate(400px,0);
-}
-.nav-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-inline: 36px;
-    margin-top: 36px;
-}
 
-.nav-header h1{
-    font-size: 20px;
-
-}
-.nav-items{
-    margin-inline: 36px;
-    margin-top: 36px;
-}
-.fa-angle-right{
-    padding: 0;
-    margin: 0 !important;
-}
 .right-bar{
     position: fixed !important;
     width: fit-content !important;
@@ -77,7 +42,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 20px;
+
 }
 .right-bar i{
     margin-bottom: 20px;
@@ -97,14 +62,43 @@ body{
 .logo{
     display: none;
 }
-
+.navbar .navbar-toggler-icon{
+    color: white !important;
+    border: none;
+}
+.navbar .fa-solid {
+    margin-bottom: 0 !important;
+}
+.navbar-toggler{
+    border: none !important;
+}
+.navbar-toggler:focus{
+    box-shadow: none !important;
+}
+.offcanvas{
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+.offcanvas-header{
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+.offcanvas-title{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
 .close-button{
     border: none;
     background-color: transparent;
     color: white !important;
 }
+.offcanvas-body{
+    display: flex;
+    flex-direction: column;
+}
 .nav-item{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-transform: uppercase;
 }
 .icons{
@@ -131,11 +125,6 @@ body{
         right: 0;
         flex-direction: row-reverse;
         justify-content: space-between;
-        top: 0;
-    }
-    .right-nav{
-        top: 0;
-        
     }
     .vertical-icons{
         flex-direction: row;
@@ -158,7 +147,7 @@ body{
     }
 }
 .bg-image{
-    background: url(../img/Keepitsimple.webp), linear-gradient(transparent, black 100%);
+    background: url(../img/Keepitsimple.webp), linear-gradient(transparent, black 50%);
     background-blend-mode: overlay;
     height: 100vh;
     width: 100vw;
@@ -282,8 +271,8 @@ body{
         display: none;
     }
 }
-.play-icon{
-    font-size: 30px;
+.play-icon svg{
+    width: 30px !important;
     cursor: pointer;
 }
 .song-name{
@@ -319,6 +308,13 @@ body{
 path {
     stroke: #ffffff;
   }
+  .error-message{
+    font-size: 13px;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5px;
+  }
+
   .footer{
     background:#000;
     padding:30px 0px;
@@ -374,4 +370,127 @@ path {
     .footer .row a i{
     margin:0% 3%;
     }
+    }
+
+    .right-nav{
+        position: absolute;
+        width: 400px;
+        height: 100vh;
+        right: -50px;
+        background-color: #000;
+        z-index: 500000;
+        transition: all 0.5s;
+        top: -20px;
+        transform: translate(400px,0);
+        font-family: "MonumentExtended", "Helvetica", Arial, sans-serif !important;
+        -webkit-text-stroke-width: 0px;
+        letter-spacing: 1.5px;
+    }
+    .nav-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-inline: 36px;
+        margin-top: 36px;
+    }
+    
+    .nav-header h1{
+        font-size: 20px;
+    
+    }
+    .nav-items{
+        margin-inline: 36px;
+        margin-top: 36px;
+    }
+    .fa-angle-right{
+        padding: 0;
+        margin: 0 !important;
+    }
+    .right-bar{
+        position: fixed !important;
+        width: fit-content !important;
+        z-index: 100 !important;
+        right: 40px;
+        color: white !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 20px;
+    }
+    .right-bar i{
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    .vertical-icons{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        margin-top: 50px;
+    }
+    .vertical-icon{
+        width: 21.5px;
+        display: flex !important; 
+        justify-content: center;
+    }
+    .logo{
+        display: none;
+    }
+    
+    .close-button{
+        border: none;
+        background-color: transparent;
+        color: white !important;
+    }
+    .nav-item{
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+    .icons{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .icons i{
+        font-size: 18px;
+    }
+    .sign{
+        margin-top: 30px;
+        font-size: 13px;
+    }
+    .sign-in{
+        border: 1px white solid;
+        padding: 5px 20px;
+        width: fit-content;
+    }
+    @media screen and (width < 1100px) {
+        .right-bar{
+            width: 100vw !important;
+            background-color: black;
+            right: 0;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            top: 0;
+        }
+        .right-nav{
+            top: 0;
+        }
+        .vertical-icons{
+            flex-direction: row;
+            margin-top: 0;
+        }
+        .vertical-icon{
+            margin-bottom: 0 !important;
+            margin-right: 10px;
+        }
+        .logo{
+            display: block;
+        }
+        .logo img{
+            width: 50px;
+        }
+    }
+    @media screen and (width < 450px) {
+        .vertical-icons{
+            display: none;
+        }
     }

@@ -57,3 +57,18 @@ playIconContainers.forEach((iconContainer) => {
         backgroundImg.style.backgroundBlendMode = 'overlay';
     });
 });
+let rightNav = document.getElementById('right-nav');
+let navbarToggler = document.getElementById('navbar-toggler');
+let navBarState = 0;
+navbarToggler.addEventListener('click',() => {
+    console.log(1)
+    if(navBarState == 0){
+        rightNav.style.width = '300px';
+        navBarState = 1;
+
+    }
+    else{
+        rightNav.style.width = '0px';
+        navBarState = 0;
+    }
+})
