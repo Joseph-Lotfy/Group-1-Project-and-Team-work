@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="container">
+        <form class="form">
+            <h1>Sign In</h1>
+            <p class="op-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam repellendus quis debitis omnis optio tempore quod ulla</p>
+            <div class="input-container">
+                <input type="text" name="name" class="input" required>
+                <label>Username</label>
+                <span>Username</span>
+            </div>
+            <div class="input-container">
+                <input type="password" name="name" class="input" required>
+                <label>Password</label>
+                <span>Password</span>
+            </div>
+            <div class="input-container">
+                <input type="email" name="name" class="input" required>
+                <label>Email</label>
+                <span>Email</span>
+            </div>
+            <div class="remember-password">
+                <label><input type="checkbox" readonly> Remember Me</label>
+                <a href="#">Forget Password</a>
+            </div>
+            <button class="log" type="submit">Log In</button>
+            <p class="or">- or -</p>
+            <button class="face" type="submit"><i class="fab fa-facebook-f"></i> Log With Facebook</button>
+            <button class="twitter" type="submit"><i class="fab fa-instagram"></i> Log With Twitter</button>
+            <button class="google" type="submit"><i class="fab fa-google"></i> Log With Google</button>
+
+        </form>
+        <div class="img">
+            <img src="img/groupImg2.png">
+        </div>
+    </div>
+    <script>
+        const input= document.querySelectorAll(".input");
+
+function focusFun(){
+    let parent= this.parentNode;
+    parent.classList.add("focus");
+}
+
+function blurFun(){
+    let parent= this.parentNode;
+    if(this.value==""){
+        parent.classList.remove("focus")
+    }
+}
+
+input.forEach((inputs)=>{
+    inputs.addEventListener("focus",focusFun);
+    inputs.addEventListener("blur",blurFun);
+});
+    </script>
+</body>
+</html>

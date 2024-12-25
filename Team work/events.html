@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Events Example</title>
+  <style>
+    .box {
+      width: 150px;
+      height: 100px;
+      margin: 20px;
+      background-color: lightblue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      border: 2px solid black;
+    }
+    .log {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid gray;
+      background-color: #f9f9f9;
+      height: 100px;
+      overflow-y: auto;
+    }
+    form {
+      margin: 20px;
+    }
+    .my-flex{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 10px;
+      margin: 0;
+      padding: 60px;
+      flex-wrap: wrap;
+      width: 90vw;
+      height: 50vh;
+      border: 2px solid black;
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mouse Events Example</h1>
+  <div class="my-flex">
+    <div class="box" id="clickBox">Click Me</div>
+    <div class="box" id="mouseoverBox">Hover Over Me</div>
+    <div class="box" id="mouseoutBox">Move Out of Me</div>
+    <div class="box" id="mousedownBox">Hold Down Here</div>
+    <div class="box" id="mouseupBox">Release Here</div>
+    <div class="box" id="mousemoveBox">Move Mouse Here</div>
+    <div class="log" id="log">Event log will appear here...</div>
+
+    <input type="text" id="keyboardInput" placeholder="Type here for key events" style="margin: 20px; padding: 10px;">
+
+    <form id="form">
+      <input type="text" id="focusInput" placeholder="Focus on me" style="margin: 10px; padding: 5px;">
+      <input type="text" id="changeInput" placeholder="Change me" style="margin: 10px; padding: 5px;">
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+
+  </div>
+
+<script>
+    const logDiv = document.getElementById('log');
+
+    const logEvent = (message) => {
+        const logItem = document.createElement('div');
+      logItem.textContent = message;
+      logDiv.appendChild(logItem);
+      logDiv.scrollTop = logDiv.scrollHeight; // Auto-scroll to the bottom
+    };
+
+    document.getElementById('clickBox').addEventListener('click', () => {
+      logEvent('Click event triggered!');
+    });
+
+    document.getElementById('mouseoverBox').addEventListener('mouseover', () => {
+      logEvent('Mouseover event triggered!');
+    });
+
+    document.getElementById('mouseoutBox').addEventListener('mouseout', () => {
+      logEvent('Mouseout event triggered!');
+    });
+
+    document.getElementById('mousedownBox').addEventListener('mousedown', () => {
+      logEvent('Mousedown event triggered!');
+    });
+
+    document.getElementById('mouseupBox').addEventListener('mouseup', () => {
+      logEvent('Mouseup event triggered!');
+    });
+
+    document.getElementById('mousemoveBox').addEventListener('mousemove', () => {
+      logEvent('Mousemove event triggered!');
+    });
+
+    keyboardInput.addEventListener('keyup', (event) => {
+      logEvent(`Keyup event: '${event.key}' key released!`);
+    });
+
+
+    // Focus Event
+    document.getElementById('focusInput').addEventListener('focus', () => {
+      logEvent('Focus event triggered!');
+
+    });
+
+    // Change Event
+    document.getElementById('changeInput').addEventListener('change', () => {
+      logEvent('Change event triggered!');
+    });
+
+    // Submit Event
+    document.getElementById('form').addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent form submission
+      logEvent('Submit event triggered!');
+    });
+
+    // Reset Event
+    document.getElementById('form').addEventListener('reset', () => {
+      logEvent('Reset event triggered!');
+    });
+
+    // Window Load Event
+    window.addEventListener('load', () => {
+      logEvent('Window load event triggered!');
+    });
+
+    // Window Unload Event
+    window.addEventListener('beforeunload', (event) => {
+      event.preventDefault();
+      logEvent('Window unload event triggered!');
+      return (event.returnValue = 'Are you sure you want to leave?');
+    });
+
+    // Window Resize Event
+    window.addEventListener('resize', () => {
+      logEvent('Window resize event triggered!');
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+*{
+    box-sizing: border-box;
+    font-family: serif;
+}
+:root{
+    --main-color: #dd63ff;
+    --secondary-color: #28c9fa;
+    --main-delay: 0.5s;
+    --padding-value: 45px;
+    --table-padding: 15px;
+}
+body{
+    background-image: linear-gradient(140deg, rgb(242, 242, 255),rgb(244, 244, 248),rgb(242, 242, 255));
+    padding: 0 30px 300px 30px;
+}
+.heading{
+    text-align: center;
+    color: #444;
+    text-shadow: 0 0 10px blueviolet;
+    /* background-color: tomato; */
+}
+hr{
+    border: #444 solid 3px;
+}
+.button{
+    margin: auto;
+    border: var(--main-color) solid 3px;
+    background-color: aquamarine;
+    display: inline-block;
+    width: fit-content;
+}
+img{
+    margin: auto;
+    display: block;
+}
+/* class mytable */
+.mytable {
+    margin: auto;
+    text-align: center;
+}
+.mytable ,.mytable tr,.mytable  td,.mytable th{
+    border: 1px solid #444;
+    border-collapse: collapse;
+    padding: var(--table-padding);
+}
+.mytable tr{
+    background-color: white;
+}
+.mytable tr:nth-child(even){
+    background-color: #eee;
+}
+.mytable td:hover,.mytable th:hover{
+    background-color: #ccc;
+}
+.mytable caption{
+    margin: auto;
+    background-color: #88f;
+}
+/* class invisible */
+.invisible ,.invisible td,.invisible th{
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: var(--table-padding);
+    margin: auto;
+    text-align: center;
+}
+.invisible th,.invisible td{
+    background-color: #96D4D4;
+}
+/* class border_radius */
+.border_radius,.border_radius td,.border_radius th{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: var(--table-padding);
+    margin: auto;
+    text-align: center;
+}
+/* class inset */
+.inset{
+    padding: var(--table-padding);
+    background-color: #f7f7f7;
+    margin: auto;
+}
+.inset td,.inset th{
+    border: 4px inset white;
+    padding: var(--table-padding);
+    margin: auto;
+    text-align: center;
+}
+/* class col-group */
+.col-group ,.col-group th,.col-group td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+/* class special-numbers */
+.special-numbers{
+    margin: auto;
+    font-size: 200px;
+    text-align: center;
+    padding: 75px;
+    position: relative;
+}
+
+.even , .odd{
+    transition: .5s;
+    position: relative;
+    text-align: center;
+    top: 0;
+}
+
+.special-numbers:hover .odd{
+    top: 5px;
+}
+
+.special-numbers:hover .even{
+    top: -5px;
+}
+/* class month */
+.month{
+    display: inline;
+    padding: var(--table-padding);
+    width: 33%;
+    height: fit-content;
+}
+.month table,.month tr,.month td,.month th{
+    text-align: center;
+    border-collapse: none;
+    border: none;
+    padding: var(--table-padding);
+    transition: background 0.5s;
+    position: relative;
+}
+.month th:first-child,.month th:last-child,.month td:first-child,.month td:last-child{
+    color: rgba(0, 0, 255, 0.8);
+}
+.month caption{
+    margin: auto;
+    background-color: rgb(255, 125, 216);
+    padding-block: 10px;
+    width: 100%;
+    color: white;
+}
+.month caption:first-child{
+    font-size: 300%;
+}
+.month .active:hover{
+    background-color: rgb(113, 208, 252);
+}
+.bigTableRow{
+    /* height: 500px; */
+    vertical-align:top;
+}
+.bigTable{
+    margin: auto;
+}
+.active2{
+    outline: 3px solid black !important;
+    outline-offset: -2px;
+    border-radius: 10px;
+}
