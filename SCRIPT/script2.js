@@ -5,36 +5,30 @@ playIconContainers.forEach((iconContainer) => {
     iconContainer.dataset.state = 'play';
 
     iconContainer.addEventListener('click', (e) => {
-        // Check if the clicked icon is in "play" state
         if (iconContainer.dataset.state === 'play') {
-            // Reset all other "paused" icons to "play"
             playIconContainers.forEach((otherIcon) => {
                 if (otherIcon !== iconContainer && otherIcon.dataset.state === 'pause') {
                     otherIcon.classList.remove('bi-pause-fill');
                     otherIcon.classList.add('bi-play-fill');
                     otherIcon.dataset.state = 'play';
-
-                    // Pause all other audio
                     document.querySelectorAll('.audio').forEach((a) => a.pause());
                 }
             });
-
-            // Update the current icon to "pause"
             iconContainer.classList.remove('bi-play-fill');
             iconContainer.classList.add('bi-pause-fill');
             iconContainer.dataset.state = 'pause';
 
-            // Play the corresponding audio
+
             const song = e.target.closest('.song');
             let audio = song.querySelector('.audio');
             audio.play();
         } else {
-            // Update the current icon to "play"
+
             iconContainer.classList.remove('bi-pause-fill');
             iconContainer.classList.add('bi-play-fill');
             iconContainer.dataset.state = 'play';
 
-            // Pause the corresponding audio
+
             const song = e.target.closest('.song');
             let audio = song.querySelector('.audio');
             audio.pause();

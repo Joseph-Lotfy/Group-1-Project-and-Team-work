@@ -158,7 +158,7 @@
             <div class="menu"></div>
 
         </header> -->
-        <h1>monstercat <br> <span>artists</span> </h1>
+        <h1>VibeStream <br> <span>artists</span> </h1>
         <section class="featured">
             <h2>Featured</h2>
             <div class="owl-carousel owl-loaded owl-theme owl-drag">
@@ -188,7 +188,7 @@
         </section>
 
         <div class="title flex">
-            <h2>monstercat <br> roster</h2>
+            <h2>VibeStream <br> roster</h2>
             <div style="gap: 8px;" class="flex">
                 <button onclick="clickSearchEvent()" class="search-button"><label for="search-word"><span
                             class="icon-search"></span></label><input type="text" placeholder="SEARCH"
@@ -205,19 +205,19 @@
             </article>
             <article class="flex">
                 <img src="./public/images/WhatsApp Image 2024-12-18 at 11.46.49_331cb4a6.jpg" alt="image error">
-                <h3>hassan</h3>
+                <h3>El masrryin</h3>
             </article>
             <article class="flex">
                 <img src="./public/images/WhatsApp Image 2024-12-18 at 11.46.49_f55febf4.jpg" alt="image error">
-                <h3>hassan</h3>
+                <h3>Massar Egbari</h3>
             </article>
             <article class="flex">
                 <img src="./public/images/WhatsApp Image 2024-12-18 at 11.47.00_9d9ed7ae.jpg" alt="image error">
-                <h3>Hassan</h3>
+                <h3>muse</h3>
             </article>
             <article class="flex">
                 <img src="./public/images/WhatsApp Image 2024-12-18 at 11.47.28_31d73777.jpg" alt="image error">
-                <h3>Hassan</h3>
+                <h3>The Strokes</h3>
             </article>
             <article class="flex">
                 <img src="./public/images/pexels-eric-esma-302047-894156.jpg" alt="image error">
@@ -241,13 +241,29 @@
             </article>
 
         </div>
-        <footer class="flex">
-            <ul class="flex">
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">example</a></li>
+        <footer>
+            <div class="footer">
+            <div class="row">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            </div>
+            
+            <div class="row">
+            <ul>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="artist.php">Artists</a></li>
+            <li><a href="signin.php">Sign In</a></li>
+            <li><a href="signup.php">Sign Up</a></li>
+
             </ul>
-            <p>© 2024 Hassan Sayed. All rights reserved.</p>
+            </div>
+            
+            <div class="row">
+                VibeStream  Copyright © 2024 VibeStream  - All rights reserved || Designed By: Group 1
+            </div>
+            </div>
         </footer>
 
     </div>

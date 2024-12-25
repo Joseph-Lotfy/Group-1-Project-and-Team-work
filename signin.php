@@ -1,48 +1,36 @@
 <?php 
-
 session_start();
 
-	include("connection.php");
-	include("functions.php");
+include("connection.php");
+include("functions.php");
 
+$error_message = ""; // Variable to store error message
 
-	if($_SERVER['REQUEST_METHOD'] == "POST")
-	{
-		//something was posted
-		$user_name = $_POST['user_name'];
-		$password = $_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $user_name = $_POST['user_name'];
+    $password = $_POST['password'];
 
-		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
-		{
+    if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
+        // Read from database
+        $query = "SELECT * FROM users WHERE user_name = '$user_name' LIMIT 1";
+        $result = mysqli_query($con, $query);
 
-			//read from database
-			$query = "select * from users where user_name = '$user_name' limit 1";
-			$result = mysqli_query($con, $query);
-
-			if($result)
-			{
-				if($result && mysqli_num_rows($result) > 0)
-				{
-
-					$user_data = mysqli_fetch_assoc($result);
-					
-					if($user_data['password'] === $password)
-					{
-
-						$_SESSION['user_id'] = $user_data['user_id'];
-						header("Location: index.php");
-						die;
-					}
-				}
-			}
-			
-			echo "wrong username or password!";
-		}else
-		{
-			echo "wrong username or password!";
-		}
-	}
-
+        if ($result && mysqli_num_rows($result) > 0) {
+            $user_data = mysqli_fetch_assoc($result);
+            if ($user_data['password'] === $password) {
+                $_SESSION['user_id'] = $user_data['user_id'];
+                header("Location: index.php");
+                die;
+            } else {
+                $error_message = "Wrong username or password!";
+            }
+        } else {
+            $error_message = "Wrong username or password!";
+        }
+    } else {
+        $error_message = "Please enter a valid username and password!";
+    }
+}
 ?>
 
 
@@ -226,6 +214,7 @@ session_start();
                     <input id="check" type="checkbox" class="check" checked>
                     <label for="check"><span class="icon"></span> Keep me Signed in</label>
                   </div>
+                  <p id="demo"></p>
                   <div class="group">
                     <input type="submit" class="button" value="Sign In">
                   </div>
@@ -252,10 +241,10 @@ session_start();
             
             <div class="row">
             <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Artists</a></li>
-            <li><a href="#">Sign In</a></li>
-            <li><a href="#">Sign Up</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="artist.php">Artists</a></li>
+            <li><a href="signin.php">Sign In</a></li>
+            <li><a href="signup.php">Sign Up</a></li>
 
             </ul>
             </div>
@@ -266,6 +255,16 @@ session_start();
             </div>
         </footer>
     </div>
+
+    <script>
+        // Dynamically inject error message if it exists
+        <?php if (!empty($error_message)): ?>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('demo').innerHTML = "<?php echo addslashes($error_message); ?>";
+                document.getElementById('demo').style.color = "red"; // Add styling for error message
+            });
+        <?php endif; ?>
+    </script>
     <script src="SCRIPT/nav.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/620f487299.js" crossorigin="anonymous"></script>

@@ -229,16 +229,16 @@
             </div>
             <div class="song">
                 <audio class="audio">
-                    <source src="audio/Ode To The Mets.mp3" type="audio/mpeg">
+                    <source src="audio/SahrEl-Layali.mp3" type="audio/mpeg">
                 </audio>
                 <div class="song-left">
                     <div class="song-number">4</div>
                     <i class="play-icon bi bi-play-fill" data-state="play"></i> <!-- Changed id to class -->
-                    <img src="img/OdeToMets.jpeg" class="song-img">
+                    <img src="img/Sahr-El-layali.jpeg" class="song-img">
 
                     <div class="song-detail">
-                        <div class="song-name">Ode To Mets</div>
-                        <div class="song-artist">The Strokes</div>
+                        <div class="song-name">Sahr El-Layali</div>
+                        <div class="song-artist">Fayrouz</div>
                     </div>
                 </div>
                 <div class="song-right">
@@ -296,10 +296,10 @@
             
             <div class="row">
             <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Artists</a></li>
-            <li><a href="#">Sign In</a></li>
-            <li><a href="#">Sign Up</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="artist.php">Artists</a></li>
+            <li><a href="signin.php">Sign In</a></li>
+            <li><a href="signup.php">Sign Up</a></li>
 
             </ul>
             </div>

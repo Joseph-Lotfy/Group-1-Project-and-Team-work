@@ -268,10 +268,10 @@ session_start();
             
             <div class="row">
             <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Artists</a></li>
-            <li><a href="#">Sign In</a></li>
-            <li><a href="#">Sign Up</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="artist.php">Artists</a></li>
+            <li><a href="signin.php">Sign In</a></li>
+            <li><a href="signup.php">Sign Up</a></li>
 
             </ul>
             </div>
@@ -319,7 +319,7 @@ session_start();
                 errorPass1.textContent = 'Password is required.';
                 isValid = false;
             } else if (password.length < 3) {
-                errorPass1.textContent = 'Password must be at least 6 characters.';
+                errorPass1.textContent = 'Password must be at least 4 characters.';
                 isValid = false;
             }
     

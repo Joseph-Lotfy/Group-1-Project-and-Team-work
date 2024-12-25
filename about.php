@@ -175,7 +175,7 @@
     </div>
     <div class="container  filterBlur" style="margin-top: 10px;">
         <h1 class="heading1">ABOUT</h1>
-        <h1 class="heading2">EcoHarmony</h1>
+        <h1 class="heading2">VibeStream</h1>
         <div class="about-paragraph">
             <p>
                 Discover a music experience like no other with our dynamic platform. Designed to bring you closer to your favorite songs and artists, our music player offers a clean and intuitive interface for exploring playlists, browsing artist profiles, and staying in tune with the latest trends.
@@ -276,7 +276,7 @@
       
               <!-- Second Row -->
               <div class="team-card">
-                <img class="team-img" src="img/Josef.jpg" alt="New Person 1" />
+                <img class="team-img" src="img/josef3.jpg" alt="New Person 1" />
                 <div class="card-content">
                   <h3>Joseph Lotfy</h3>
                   <p>The artist</p>
@@ -292,7 +292,7 @@
 
             </div>
           </section>
-          <footer>
+        <footer>
             <div class="footer">
             <div class="row">
             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -303,10 +303,10 @@
             
             <div class="row">
             <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Artists</a></li>
-            <li><a href="#">Sign In</a></li>
-            <li><a href="#">Sign Up</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="artist.php">Artists</a></li>
+            <li><a href="signin.php">Sign In</a></li>
+            <li><a href="signup.php">Sign Up</a></li>
 
             </ul>
             </div>
